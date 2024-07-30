@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+        background-image:url("imgDOMAnimation.jpg");
+        background-repeat: no-repeat;
+        /* background-size: cover; */
+        background-size: 1700px 100vh;
+    }
+    .girl
+    {
+       
+        position: absolute;
+        left: 100px;
+        top: 130px ;
+    }
+    .dog
+    {
+        position: absolute;
+        left: 0px;
+        top: 500px;
+    }
+    button
+    {
+       background-color: palevioletred;
+       border-radius: 5px;
+       padding: 5px;
+    }
+
+    </style>
+</head>
+<body>
+    <div  >
+        <img src="img3DOMAnimation.png" id="animate" class="girl">
+       <img src="img2dog.png" id="animate2" class="dog">
+    </div>
+    <button onclick="move()">GO</button>
+   
+    <script>
+        
+        function move()
+        { 
+        let pos=100;
+        let pos2=0;
+        let id=null;
+        let id2=null;
+        var elem=document.getElementById("animate");
+        var elem2=document.getElementById("animate2");
+        // console.log(elem.style);
+        id=setInterval(frame,5);
+        id2=setInterval(frame2,5);
+        function frame() 
+        {
+        
+        if (pos == 1050)
+        {
+        clearInterval(id);
+        }
+        else {
+           
+        pos++; 
+        elem.style.left = pos + "px"; 
+        }
+        }
+        function frame2()
+        {
+        if(pos2==980)
+        {
+        clearInterval(id2);
+        }
+        else
+        {
+        pos2++; 
+        elem2.style.left = pos2 + "px"; 
+        }
+        }
+        }
+        // function move2()
+        // { 
+        // let pos=0;
+        // let id=null;
+        // var elem=document.getElementById("animate");
+        // // console.log(elem.style);
+        // id=setInterval(frame,5);
+        // function frame() 
+        // {
+        
+        // if (pos == 1050)
+        // {
+        // clearInterval(id);
+        // }
+        // else {
+           
+        // pos++; 
+        // elem.style.left = pos + "px"; 
+        // }
+        // }
+        // }
+    </script>
+
+    
+</body>
+</html>
